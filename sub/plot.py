@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-#--------------------------
 
 import numpy as np
 import matplotlib
@@ -71,10 +70,10 @@ for k in range(len(column_threadGroup_1_raw)):
         if value[0] == l:
             dict_thread_sorted_1[l].append(value[1])
 
-#print dict_thread_sorted_1   # 不能对key排序，本来就是无序的
+#print dict_thread_sorted_1
 #  {'Thread Group 1-5': [239, 67, 81, 79, 75, 69, 37, 64, 49, 38, 45, 38, 42, 40, 39, 26, 41, 40, 29, 36, 59, 72, 91, 40, 41, 41, 25, 39, 39, 81, 29, 55, 64, 44, 25, 39, 49, 29, 26, 26, 25, 42, 55, 40, 25, 39, 42, 40, 39, 35, 41, 26, 42, 42, 43, 42, 28, 26, 43, 41, 26, 42, 54, 39, 36, 38, 39, 25, 40, 46, 43, 50, 47, 40, 41, 43, 39, 42, 40, 34, 26, 54, 42, 29, 40, 43, 39, 37, 40, 42, 47, 42, 50, 27, 46, 39, 41, 116, 48, 50], 'Thread Group 1-4': [216, 80, 99, 79, 69, 70, 41, 76, 50, 47, 55, 44, 43, 46, 61, 41, 44, 48, 29, 146, 67, 67, 42, 41, 40, 41, 29, 25, 39, 38, 41, 25, 30, 42, 25, 25, 57, 28, 27, 25, 26, 41, 54, 27, 27, 42, 34, 49, 43, 26, 25, 27, 39, 41, 40, 40, 26, 26, 39, 40, 25, 39, 37, 43, 30, 57, 41, 25, 29, 30, 39, 45, 52, 45, 57, 52, 30, 45, 45, 29, 36, 43, 42, 27, 38, 84, 54, 26, 38, 26, 31, 43, 38, 29, 31, 42, 29, 96, 55, 49], 'Thread Group 1-3': [201, 74, 88, 69, 58, 47, 27, 38, 39, 37, 41, 41, 39, 38, 40, 37, 40, 41, 27, 30, 73, 73, 72, 42, 40, 40, 55, 43, 42, 137, 26, 39, 40, 38, 25, 37, 41, 38, 26, 26, 28, 38, 39, 39, 25, 39, 39, 39, 38, 40, 37, 26, 40, 38, 39, 40, 35, 25, 39, 37, 25, 38, 39, 37, 38, 38, 38, 27, 60, 43, 40, 40, 38, 39, 40, 41, 38, 41, 39, 41, 28, 43, 38, 27, 41, 38, 42, 37, 38, 39, 39, 39, 27, 53, 43, 40, 53, 44, 50, 68], 'Thread Group 1-2': [185, 60, 42, 37, 40, 40, 56, 38, 37, 37, 41, 39, 38, 44, 41, 41, 39, 41, 30, 30, 67, 66, 69, 39, 41, 41, 40, 37, 37, 38, 38, 38, 38, 28, 37, 37, 37, 25, 60, 54, 37, 38, 38, 36, 26, 39, 38, 39, 26, 38, 38, 43, 40, 39, 38, 42, 38, 25, 38, 38, 26, 38, 36, 38, 39, 37, 34, 37, 38, 37, 39, 39, 26, 38, 27, 38, 41, 39, 30, 39, 41, 38, 28, 28, 41, 27, 26, 38, 30, 38, 26, 27, 57, 40, 38, 27, 31, 25, 26, 39], 'Thread Group 1-1': [41, 38, 42, 38, 27, 42, 28, 37, 25, 37, 40, 38, 41, 39, 41, 39, 39, 40, 57, 40, 100, 58, 69, 64, 44, 40, 40, 39, 25, 39, 38, 38, 26, 26, 37, 41, 25, 26, 26, 38, 37, 38, 46, 25, 26, 39, 26, 26, 26, 38, 27, 26, 26, 39, 40, 51, 38, 45, 43, 25, 46, 41, 34, 35, 46, 29, 39, 38, 32, 30, 25, 26, 26, 26, 26, 39, 41, 28, 27, 41, 27, 26, 26, 38, 41, 27, 25, 37, 44, 42, 25, 26, 40, 26, 27, 26, 26, 26, 26, 38]}
 #print '\n\n'
-list_thread_sorted_1=sorted(dict_thread_sorted_1.iteritems(), key=lambda k:int(k[0].split('-')[-1]))  # 排序后是一个list
+list_thread_sorted_1=sorted(dict_thread_sorted_1.iteritems(), key=lambda k:int(k[0].split('-')[-1]))
 #print list_thread_sorted_1
 
 '''
@@ -222,11 +221,11 @@ for y in range(len(list_thread_sorted_3)):
 
 
 
-x_step=10  # 不变
+x_step=10
 y_step=100
-x_min=min(column_sampleNumber_1) # 不变
-y_min=0 # 不变
-x_max=max(column_sampleNumber_1)/threadNumber  # 不变
+x_min=min(column_sampleNumber_1)
+y_min=0
+x_max=max(column_sampleNumber_1)/threadNumber
 y_max=900
 colorcode=['r', 'g', 'b', 'c', 'm', 'y', 'k', 'teal', 'pink', 'sienna', 'silver', 'violet', 'salmon', 'orange', 'ivory', 'tan', 'navy', 'orchid', 'olive', 'lime']
 xy_label_size=30
@@ -235,7 +234,7 @@ xy_ticks_size=30
 
 
 # 1st round
-def f1(threadNum):  # 1st round中每一个thread
+def f1(threadNum):
     #np.array=[]
     list_legend_threadNum=[]
     for t in range(threadNum):
@@ -267,7 +266,7 @@ def f1(threadNum):  # 1st round中每一个thread
     '''
 
 # 2nd round
-def f2(threadNum):  # 1st round中每一个thread
+def f2(threadNum):
     list_legend_threadNum=[]
     for t in range(threadNum):
         list_legend_threadNum.append('Thread %d' % (t+1))
@@ -291,11 +290,11 @@ def f2(threadNum):  # 1st round中每一个thread
     ax2.set_position([box.x0, box.y0, box.width * 0.8, box.height])
     
     legend_loc='upper left'
-    ax2.legend(list_legend_threadNum, loc = legend_loc, fontsize = 20, shadow = True, bbox_to_anchor=(1.02, 0.6))  # box_to_anchor被赋予的二元组中，第一个数值用于控制legend的左右移动，值越大越向右边移动，第二个数值用于控制legend的上下移动，值越大，越向上移动    (1.02, 0.8)
+    ax2.legend(list_legend_threadNum, loc = legend_loc, fontsize = 20, shadow = True, bbox_to_anchor=(1.02, 0.6))
     '''
 
 # 3rd round
-def f3(threadNum):  # 1st round中每一个thread
+def f3(threadNum):
     list_legend_threadNum=[]
     for t in range(threadNum):
         list_legend_threadNum.append('Thread %d' % (t+1))
@@ -399,12 +398,12 @@ plt.plot(column_sampleNumber_1, y_3, 'b-')
 '''
 
 '''
-plt.xticks(np.arange(min(column_sampleNumber_1), max(column_sampleNumber_1)+1, 20), rotation = 45) #step默认就是1
+plt.xticks(np.arange(min(column_sampleNumber_1), max(column_sampleNumber_1)+1, 20), rotation = 45)
 #plt.yticks(np.arange(min(column_each), max(column_each)))
 #plt.yticks(np.arange(min(column_each_1)-5, max(column_each_1)+5, 5))
 plt.yticks(np.arange(20,900,20))
 
-plt.xlim((1,len(column_sampleNumber_1))) #设置坐标轴范围
+plt.xlim((1,len(column_sampleNumber_1)))
 #plt.ylim((min(column_each_1)-5,max(column_each_1)+5))
 plt.ylim((20,900))
 '''
@@ -444,7 +443,7 @@ for t in range(len(column_threadGroup_1)):
     lower center
 '''
 #plt.legend(['1st round', '2nd round', '3rd round'], loc = legend_loc, fontsize = 20, shadow = True)
-#plt.savefig(savePath,dpi=1000)  #一定要在show()之前
+#plt.savefig(savePath,dpi=1000)  
 
 
 plt.show()

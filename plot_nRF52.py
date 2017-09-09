@@ -71,11 +71,11 @@ with open(filename_3,'rb') as csvfile:
 
 
 
-x_step=10  # 不变
+x_step=10
 y_step=20
-x_min=min(column_sampleNumber_1) # 不变
+x_min=min(column_sampleNumber_1)
 y_min=120
-x_max=max(column_sampleNumber_1)  # 不变
+x_max=max(column_sampleNumber_1)
 y_max=460
 xy_ticks_size=30
 
@@ -106,13 +106,13 @@ plt.plot(column_sampleNumber_2, column_each_2, 'g-')
 plt.plot(column_sampleNumber_3, column_each_3, 'b-')
 #plt.plot(column_sampleNumber_3, column_average_3, 'b-')
 
-plt.xticks(np.arange(x_min, x_max, x_step), rotation = 45, fontsize=xy_ticks_size) #step默认就是1
+plt.xticks(np.arange(x_min, x_max, x_step), rotation = 45, fontsize=xy_ticks_size) #step is 1 by default
 plt.yticks(np.arange(y_min, y_max, y_step), fontsize=xy_ticks_size)
 
 #plot = fig.add_subplot(111)
 #plot.tick_params(axis="both", which="major", labelsize=xy_ticks_size)
 
-plt.xlim((x_min,x_max)) #设置坐标轴范围
+plt.xlim((x_min,x_max))
 plt.ylim((y_min,y_max))
 
 plt.legend(['$1^{st} round$','$2^{nd} round$','$3^{rd} round$'], loc = 'upper right', fontsize = 30, shadow = True)
